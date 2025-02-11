@@ -20,3 +20,10 @@ channel.set_rf_freq(57) #standard frequency
 channel.set_network_key(0, NETWORK_KEY)
 channel.set_id(0, HRM_DEVICE_TYPE, 0)
 
+#array to store the hr data
+heart_rate_data = []
+
+#function to get the incoming data and store it
+def store_data(data):
+    hr_value = data[7]  # ANT+ HR data is in byte 7 of the incoming data
+    heart_rate_data.append(hr_value)
