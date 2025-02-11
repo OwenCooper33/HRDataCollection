@@ -45,7 +45,20 @@ node.stop()
 def bpm_to_RR(bpm):
     return 60.0 / bpm
 
+#calculates RMSSD HRV
 def calc_RMSSD(RR):
     rr_diff = np.diff(RR) #to calculate successive differences
-    rmssd = np.sqrt(np.mean(rr_diff**2))
+    rmssd = np.sqrt(np.mean(np.sqrt(rr_diff)))
     return rmssd
+
+#calculates Baevsky index HRV
+
+def calc_Baevsky(RR, rmssd):
+    baesky_index = np.argmin(rmssd)
+    return baesky_index
+
+rr_intervals = [bpm_to_rr_intervals(hr) for hr in heart_rate_data]
+
+rmssd_HRV = calc_RMSSD(rr_intervals)
+print(f"HRV(RMSSD): {rmssd:.2f} seconds")
+
