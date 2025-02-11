@@ -53,7 +53,7 @@ def calc_RMSSD(RR):
     return rmssd
 
 #calculates Baevsky index HRV
-def calc_Baevsky(RR, rmssd):
+def calc_Baevsky(rr_intervals):
     # Baevsky = (AMo x %100)/(2Mo x MxDMn)
 
     #calculate AMo
@@ -76,5 +76,10 @@ def calc_Baevsky(RR, rmssd):
 rr_intervals = [bpm_to_rr_intervals(hr) for hr in heart_rate_data]
 
 rmssd_HRV = calc_RMSSD(rr_intervals)
-print(f"HRV(RMSSD): {rmssd:.2f} seconds")
+Baevsky_HRV = calc_Baevsky(rr_intervals)
+
+print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
+print(f"Baevsky Index: {Baevsky_HRV:.2f}")
+
+f, Pxx = welch(rr_intervals, fs=1, nperseg=8)
 

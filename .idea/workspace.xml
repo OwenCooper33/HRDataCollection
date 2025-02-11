@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="added the calulation for rmssd based on a formula I found online">
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="Created the function to calculate the baevsky index based on this formula: (AMo x %100)/(2Mo x MxDMn)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
@@ -74,7 +74,7 @@
       <updated>1739270450862</updated>
       <workItem from="1739270452938" duration="471000" />
       <workItem from="1739270927933" duration="1227000" />
-      <workItem from="1739282863474" duration="3225000" />
+      <workItem from="1739282863474" duration="4994000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -124,7 +124,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739285282971</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added the calculation for the RMSSD calculation, still working on the Baesky index calculation">
+      <option name="closed" value="true" />
+      <created>1739286124348</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739286124348</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created the function to calculate the baevsky index based on this formula: (AMo x %100)/(2Mo x MxDMn)">
+      <option name="closed" value="true" />
+      <created>1739286919458</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739286919458</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +153,8 @@
     <MESSAGE value="Created the store data function to receive and store the hr data" />
     <MESSAGE value="Wrote code to open the connection, run until canceled, then stop the connection" />
     <MESSAGE value="added the calulation for rmssd based on a formula I found online" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the calulation for rmssd based on a formula I found online" />
+    <MESSAGE value="Added the calculation for the RMSSD calculation, still working on the Baesky index calculation" />
+    <MESSAGE value="Created the function to calculate the baevsky index based on this formula: (AMo x %100)/(2Mo x MxDMn)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the function to calculate the baevsky index based on this formula: (AMo x %100)/(2Mo x MxDMn)" />
   </component>
 </project>
