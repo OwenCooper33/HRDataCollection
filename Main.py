@@ -40,6 +40,14 @@ while True:
 #closes the connection
 node.stop()
 
+plt.plot(time_stamps, heart_rate_data, marker='o', color='b', label="Heart Rate (BPM)")
+plt.xlabel("Time (s)")
+plt.ylabel("Heart Rate (BPM)")
+plt.title("Heart Rate Over Time")
+plt.legend()
+plt.grid(True)
+plt.show()
+
 # calculating the HRV with RMSSD and Baevsky index
 
 #converts bpm to RR interval
@@ -81,5 +89,12 @@ Baevsky_HRV = calc_Baevsky(rr_intervals)
 print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
 print(f"Baevsky Index: {Baevsky_HRV:.2f}")
 
+# calculate and plot the PSD
 f, Pxx = welch(rr_intervals, fs=1, nperseg=8)
 
+plt.semilogy(f, Pxx)
+plt.xlabel('Frequency [Hz]')
+plt.ylabel('Power Spectral Density')
+plt.title('Power Spectral Density of HRV')
+plt.grid()
+plt.show()
