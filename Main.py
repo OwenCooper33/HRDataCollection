@@ -4,6 +4,7 @@ import serial
 import matplotlib.pyplot as plt
 from openant.easy.node import Node
 from openant.easy.channel import Channel
+from scipy import stats
 
 USB_PORT = "" #when i get the ANT+ dongle it will go here
 
@@ -52,10 +53,25 @@ def calc_RMSSD(RR):
     return rmssd
 
 #calculates Baevsky index HRV
-
 def calc_Baevsky(RR, rmssd):
-    baesky_index = np.argmin(rmssd)
-    return baesky_index
+    # Baevsky = (AMo x %100)/(2Mo x MxDMn)
+
+    #calculate AMo
+    mode_rr = stats.mode(rr_intervals)[0][0]
+    #calculate Mo
+    median_rr = np.median(rr_intervals)
+
+    #Calculate Maximum and Minimum RR intervals for MxDMn
+    max_rr = np.max(rr_intervals)
+    min_rr = np.min(rr_intervals)
+
+    # Calculate MxDMn
+    mxdmn = max_rr - min_rr
+
+    #(AMo x %100)/(2Mo x MxDMn)
+    baevsky_index = (mode_rr * 100) / (2 * median_rr * mxdmn)
+
+    return baevsky_index
 
 rr_intervals = [bpm_to_rr_intervals(hr) for hr in heart_rate_data]
 
