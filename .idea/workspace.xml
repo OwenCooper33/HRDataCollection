@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="Setting up the connection for ant+  connection using mostly standard numbers">
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +73,7 @@
       <updated>1739270450862</updated>
       <workItem from="1739270452938" duration="471000" />
       <workItem from="1739270927933" duration="1227000" />
-      <workItem from="1739282863474" duration="743000" />
+      <workItem from="1739282863474" duration="1192000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -84,14 +83,32 @@
       <option name="project" value="LOCAL" />
       <updated>1739271642106</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
+      <option name="closed" value="true" />
+      <created>1739283610829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739283610830</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Setting up the connection for ant+  connection using mostly standard numbers">
+      <option name="closed" value="true" />
+      <created>1739283686661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739283686661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setting up the connection for the ANT+ sensors, mostly using standard numbers for ant+ sensors" />
     <MESSAGE value="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data" />
+    <MESSAGE value="Setting up the connection for ant+  connection using mostly standard numbers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up the connection for ant+  connection using mostly standard numbers" />
   </component>
 </project>

@@ -27,3 +27,12 @@ heart_rate_data = []
 def store_data(data):
     hr_value = data[7]  # ANT+ HR data is in byte 7 of the incoming data
     heart_rate_data.append(hr_value)
+
+channel.on_broadcast_data = store_data
+channel.open()
+node.start()
+#continue the program until it is stoppped manually
+while True:
+    time.sleep(1)
+#closes the connection
+node.stop()
