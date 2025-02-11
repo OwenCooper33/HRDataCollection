@@ -1,4 +1,4 @@
-
+import numpy as np
 import time
 import serial
 import matplotlib.pyplot as plt
@@ -22,11 +22,13 @@ channel.set_id(0, HRM_DEVICE_TYPE, 0)
 
 #array to store the hr data
 heart_rate_data = []
+time_stamps = []
 
 #function to get the incoming data and store it
 def store_data(data):
     hr_value = data[7]  # ANT+ HR data is in byte 7 of the incoming data
     heart_rate_data.append(hr_value)
+    time_stamps.append(time.time())
 
 channel.on_broadcast_data = store_data
 channel.open()
@@ -36,3 +38,14 @@ while True:
     time.sleep(1)
 #closes the connection
 node.stop()
+
+# calculating the HRV with RMSSD and Baevsky index
+
+#converts bpm to RR interval
+def bpm_to_RR(bpm):
+    return 60.0 / bpm
+
+def calc_RMSSD(RR):
+    rr_diff = np.diff(RR) #to calculate successive differences
+    rmssd = np.sqrt(np.mean(rr_diff**2))
+    return rmssd
