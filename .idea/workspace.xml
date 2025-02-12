@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="Added the calculation for welch's method of finding the PSD">
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="Added plots for the HR data over time and the PSD">
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,18 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,7 +74,7 @@
       <updated>1739270450862</updated>
       <workItem from="1739270452938" duration="471000" />
       <workItem from="1739270927933" duration="1227000" />
-      <workItem from="1739282863474" duration="5582000" />
+      <workItem from="1739282863474" duration="10988000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -147,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739287894308</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added plots for the HR data over time and the PSD">
+      <option name="closed" value="true" />
+      <created>1739288467945</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739288467945</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added plots for the HR data over time and the PSD">
+      <option name="closed" value="true" />
+      <created>1739288505336</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739288505336</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +180,10 @@
     <MESSAGE value="Added the calculation for the RMSSD calculation, still working on the Baesky index calculation" />
     <MESSAGE value="Created the function to calculate the baevsky index based on this formula: (AMo x %100)/(2Mo x MxDMn)" />
     <MESSAGE value="Added the calculation for welch's method of finding the PSD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the calculation for welch's method of finding the PSD" />
+    <MESSAGE value="Added plots for the HR data over time and the PSD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added plots for the HR data over time and the PSD" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HRDataCollection$Main.coverage" NAME="Main Coverage Results" MODIFIED="1739289427520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
