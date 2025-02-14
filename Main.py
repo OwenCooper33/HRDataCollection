@@ -8,7 +8,7 @@ from openant.easy.node import Node
 from openant.easy.channel import Channel
 from scipy import stats
 from scipy.signal import welch
-'''
+
 USB_PORT = "" #when i get the ANT+ dongle it will go here
 
 HRM_DEVICE_TYPE = 120  #120 is the hr sensor
@@ -23,28 +23,12 @@ channel.set_search_timeout(255)
 channel.set_rf_freq(57) #standard frequency
 channel.set_network_key(0, NETWORK_KEY)
 channel.set_id(0, HRM_DEVICE_TYPE, 0)
-'''
+
 #array to store the hr data
-heart_rate_data = [60, 61, 60, 62, 61, 60, 61, 62, 63, 62, 61, 60, 60, 61, 62, 63, 62, 61, 60, 61,
-                   62, 63, 64, 63, 62, 61, 62, 63, 64, 65, 64, 63, 62, 61, 62, 63, 64, 65, 66, 67,
-                   66, 65, 64, 63, 64, 65, 66, 67, 68, 69, 68, 67, 66, 65, 66, 67, 68, 69, 70, 71,
+heart_rate_data = []
 
-                   # Warm-up phase (2-4 minutes, increasing HR)
-                   72, 74, 76, 78, 80, 83, 85, 88, 90, 93, 95, 98, 100, 103, 106, 109, 112, 115,
-                   118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140,
+time_stamps = []
 
-                   # Workout peak (4-8 minutes, ~160 BPM)
-                   142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 161, 162, 163, 164, 164, 165,
-                   165, 165, 164, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152,
-                   151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136,
-                   135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120,
-
-                   # Cooldown phase (8-10 minutes, returning to rest)
-                   118, 116, 114, 112, 110, 108, 106, 104, 102, 100, 98, 96, 94, 92, 90, 88, 86, 84,
-                   82, 80, 78, 76, 74, 72, 71, 70, 69, 68, 67, 66]
-
-time_stamps = list(range(184))
-'''
 #function to get the incoming data and store it
 def store_data(data):
     hr_value = data[7]  # ANT+ HR data is in byte 7 of the incoming data
@@ -59,7 +43,7 @@ while True:
     time.sleep(1)
 #closes the connection
 node.stop()
-'''
+
 # calculating the HRV with RMSSD and Baevsky index
 
 #converts bpm to RR interval
