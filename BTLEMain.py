@@ -1,7 +1,9 @@
 import asyncio
 import time
+import matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
+matplotlib.use('TkAgg')  # Force TkAgg backend
 from bleak import BleakClient
 from scipy import stats
 from scipy.signal import welch
@@ -36,21 +38,6 @@ def calc_RMSSD(RR):
         return np.nan
     rr_diff = np.diff(RR)
     return np.sqrt(np.mean(rr_diff ** 2))
-
-#connects the hr sensor
-async def run_client(device_address):
-    async with BleakClient(device_address) as client:
-        if not client.is_connected:
-            print("Failed to connect")
-            return
-        await client.start_notify(HRM_CHAR_UUID, hr_data_handler)
-        print("Collecting data, press Ctrl+C to stop...")
-        try:
-            while True:
-                await asyncio.sleep(1)
-        except asyncio.CancelledError:
-            await client.stop_notify(HRM_CHAR_UUID)
-
 #calculates Baevsky index HRV
 def calc_Baevsky(rr_intervals):
     if len(rr_intervals) == 0:
@@ -62,35 +49,60 @@ def calc_Baevsky(rr_intervals):
     mxdmn = max_rr - min_rr
     return (mode_rr * 100) / (2 * median_rr * mxdmn)
 
+def process_data():
+    if len(rr_intervals) == 0:
+        print("No data collected.")
+        return
+    rmssd_HRV = calc_RMSSD(rr_intervals)
+    Baevsky_HRV = calc_Baevsky(rr_intervals)
+    print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
+    print(f"Baevsky Index: {Baevsky_HRV:.2f}")
+    f, Pxx = welch(rr_intervals, fs=4, nperseg=min(256, len(rr_intervals)))
+    plt.figure()
+    plt.plot(time_stamps, rr_intervals, marker='o', color='b', label="RR Intervals (s)")
+    plt.xlabel("Time (s)")
+    plt.ylabel("RR Interval (s)")
+    plt.title("RR Intervals Over Time")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+    plt.figure()
+    plt.semilogy(f, Pxx)
+    plt.xlabel('Frequency [Hz]')
+    plt.ylabel('Power Spectral Density')
+    plt.title('Power Spectral Density of HRV')
+    plt.grid()
+    plt.show()
+
+async def run_client(device_address):
+    async with BleakClient(device_address) as client:
+        if not client.is_connected:
+            print("Failed to connect")
+            return
+        await client.start_notify(HRM_CHAR_UUID, hr_data_handler)
+        print("Collecting data, press Ctrl+C to stop...")
+
+        # Signal handling for Windows
+        def signal_handler(sig, frame):
+            print("\nStopping data collection...")
+            asyncio.create_task(stop_and_process(client))
+
+        signal.signal(signal.SIGINT, signal_handler)
+
+        try:
+            while True:
+                await asyncio.sleep(1)
+        except asyncio.CancelledError:
+            await client.stop_notify(HRM_CHAR_UUID)
+            process_data()
+
+async def stop_and_process(client):
+    await client.stop_notify(HRM_CHAR_UUID)
+    process_data()
 
 async def main():
-    #get teh adress from Scanner.py
     device_address = input("Enter Wahoo TICKR address: ")
-#connects the hr sensor
-        rmssd_HRV = calc_RMSSD(rr_intervals)
-        Baevsky_HRV = calc_Baevsky(rr_intervals)
-
-        print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
-        print(f"Baevsky Index: {Baevsky_HRV:.2f}")
-
-        f, Pxx = welch(rr_intervals, fs=4, nperseg=min(256, len(rr_intervals)))
-
-        plt.figure()
-        plt.plot(time_stamps, rr_intervals, marker='o', color='b', label="RR Intervals (s)")
-        plt.xlabel("Time (s)")
-        plt.ylabel("RR Interval (s)")
-        plt.title("RR Intervals Over Time")
-        plt.legend()
-        plt.grid(True)
-        plt.show()
-
-        plt.figure()
-        plt.semilogy(f, Pxx)
-        plt.xlabel('Frequency [Hz]')
-        plt.ylabel('Power Spectral Density')
-        plt.title('Power Spectral Density of HRV')
-        plt.grid()
-        plt.show()
+    await run_client(device_address)
 
 
 if __name__ == "__main__":
