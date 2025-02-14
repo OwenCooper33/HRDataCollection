@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="create a run client function to initiate the connnection to the client for simplicity">
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="seperate functions further">
       <change beforePath="$PROJECT_DIR$/BTLEMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/BTLEMain.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +136,7 @@
       <workItem from="1739466667800" duration="5000" />
       <workItem from="1739545908776" duration="409000" />
       <workItem from="1739559328159" duration="2089000" />
-      <workItem from="1739569256609" duration="3118000" />
+      <workItem from="1739569256609" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -282,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739571283197</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="seperate functions further">
+      <option name="closed" value="true" />
+      <created>1739572397986</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1739572397986</updated>
+    </task>
+    <task id="LOCAL-00020" summary="seperate functions further">
+      <option name="closed" value="true" />
+      <created>1739572541050</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1739572541050</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +319,8 @@
     <MESSAGE value="working on btle connection for the hr data" />
     <MESSAGE value="added print statments to print the heart rate at each interval" />
     <MESSAGE value="create a run client function to initiate the connnection to the client for simplicity" />
-    <option name="LAST_COMMIT_MESSAGE" value="create a run client function to initiate the connnection to the client for simplicity" />
+    <MESSAGE value="seperate functions further" />
+    <option name="LAST_COMMIT_MESSAGE" value="seperate functions further" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -315,14 +332,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BTLEMain.py</url>
-          <line>107</line>
+          <line>108</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1739572339283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1739572415553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$tests.coverage" NAME="tests Coverage Results" MODIFIED="1739571529768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$Main.coverage" NAME="Main Coverage Results" MODIFIED="1739289427520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$Scanner.coverage" NAME="Scanner Coverage Results" MODIFIED="1739572318269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
