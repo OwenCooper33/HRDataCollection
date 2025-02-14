@@ -88,7 +88,7 @@ async def run_client(device_address):
         def signal_handler(sig, frame):
             print("\nStopping data collection...")
             asyncio.create_task(stop_and_process(client))
-
+#need to fix the quit on cntrl c but it works without
         signal.signal(signal.SIGINT, signal_handler)
 
         try:
@@ -98,10 +98,13 @@ async def run_client(device_address):
             await client.stop_notify(HRM_CHAR_UUID)
             process_data()
 
+#stop the connection and process the data
 async def stop_and_process(client):
     await client.stop_notify(HRM_CHAR_UUID)
     process_data()
 
+#get the adress from the Scanner file
+# my wahoo tickr is 40ED4EEF-107E-2438-6DC1-8C57CCE2563A
 async def main():
     device_address = input("Enter Wahoo TICKR address: ")
     await run_client(device_address)
@@ -110,4 +113,3 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 
-    #40ED4EEF-107E-2438-6DC1-8C57CCE2563A
