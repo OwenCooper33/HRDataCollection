@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from bleak import BleakClient
 from scipy import stats
 from scipy.signal import welch
+import signal
 
 # Wahoo TICKR btle and  UUID
 HRM_SERVICE_UUID = '0000180d-0000-1000-8000-00805f9b34fb'
@@ -36,6 +37,20 @@ def calc_RMSSD(RR):
     rr_diff = np.diff(RR)
     return np.sqrt(np.mean(rr_diff ** 2))
 
+#connects the hr sensor
+async def run_client(device_address):
+    async with BleakClient(device_address) as client:
+        if not client.is_connected:
+            print("Failed to connect")
+            return
+        await client.start_notify(HRM_CHAR_UUID, hr_data_handler)
+        print("Collecting data, press Ctrl+C to stop...")
+        try:
+            while True:
+                await asyncio.sleep(1)
+        except asyncio.CancelledError:
+            await client.stop_notify(HRM_CHAR_UUID)
+
 #calculates Baevsky index HRV
 def calc_Baevsky(rr_intervals):
     if len(rr_intervals) == 0:
@@ -47,31 +62,11 @@ def calc_Baevsky(rr_intervals):
     mxdmn = max_rr - min_rr
     return (mode_rr * 100) / (2 * median_rr * mxdmn)
 
+
 async def main():
     #get teh adress from Scanner.py
     device_address = input("Enter Wahoo TICKR address: ")
 #connects the hr sensor
-    async with BleakClient(device_address) as client:
-        if not client.is_connected:
-            print("Failed to connect")
-            return
-#starts the connection
-        await client.start_notify(HRM_CHAR_UUID, hr_data_handler)
-
-        print("Collecting data, press Ctrl+C to stop...")
-
-        try:
-            while True:
-                await asyncio.sleep(1)
-
-        except KeyboardInterrupt:
-            await client.stop_notify(HRM_CHAR_UUID)
-
-        if len(rr_intervals) == 0:
-            print("No data collected.")
-            return
-
-
         rmssd_HRV = calc_RMSSD(rr_intervals)
         Baevsky_HRV = calc_Baevsky(rr_intervals)
 
