@@ -20,10 +20,10 @@ async def hr_data_handler(sender, data):
 # checks the "flag" byte to see if the hr is stored in one or two
 # bytes and reads in the appropriate byte
     flag = data[0]
-    hr_value = data[1]  # Heart rate value is usually the second byte
+    hr_value = data[1]  # Heart rate value seems to be the second byte
 
     print(f"Heart Rate: {hr_value} bpm")  # Print the HR value each time it's read
-
+# gets the rr from the 2nd byte
     if flag & 0x10:
         rr_bytes = data[2:]
         for i in range(0, len(rr_bytes), 2):
@@ -38,6 +38,7 @@ def calc_RMSSD(RR):
         return np.nan
     rr_diff = np.diff(RR)
     return np.sqrt(np.mean(rr_diff ** 2))
+
 #calculates Baevsky index HRV
 def calc_Baevsky(rr_intervals):
     if len(rr_intervals) == 0:
