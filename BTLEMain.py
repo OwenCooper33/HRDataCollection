@@ -76,6 +76,7 @@ def process_data():
     plt.show()
 
 async def run_client(device_address):
+    #connects to the hr sensor
     async with BleakClient(device_address) as client:
         if not client.is_connected:
             print("Failed to connect")
