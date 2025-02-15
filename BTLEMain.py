@@ -8,6 +8,7 @@ from bleak import BleakClient
 from scipy import stats
 from scipy.signal import welch
 import signal
+import csv
 
 # Wahoo TICKR btle and  UUID
 HRM_SERVICE_UUID = '0000180d-0000-1000-8000-00805f9b34fb'
@@ -58,6 +59,13 @@ def process_data():
     Baevsky_HRV = calc_Baevsky(rr_intervals)
     print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
     print(f"Baevsky Index: {Baevsky_HRV:.2f}")
+
+    with open("hrv_data.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Timestamp", "RR Interval (s)"])
+        for ts, rr in zip(time_stamps, rr_intervals):
+            writer.writerow([ts, rr])
+
     f, Pxx = welch(rr_intervals, fs=4, nperseg=min(256, len(rr_intervals)))
     plt.figure()
     plt.plot(time_stamps, rr_intervals, marker='o', color='b', label="RR Intervals (s)")
@@ -112,4 +120,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
