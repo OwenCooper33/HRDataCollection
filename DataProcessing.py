@@ -14,11 +14,13 @@ def read_csv():
     try:
         with open(csv_file, "r") as f:
             reader = csv.reader(f)
-            next(reader)  # Skip header
+            next(reader)
             for row in reader:
-                timestamps.append(float(row[0]))
-                heart_rates.append(int(row[1]))
-                rr_intervals.append(float(row[2]))
+                timestamp, hr, rr = float(row[0]), int(row[1]), float(row[2])
+                if hr > 0:
+                    timestamps.append(timestamp)
+                    heart_rates.append(hr)
+                    rr_intervals.append(rr)
     except FileNotFoundError:
         print("No data file found.")
     return timestamps, heart_rates, rr_intervals
