@@ -85,14 +85,27 @@ def process_data():
     print(f"Baevsky Index: {Baevsky_HRV:.2f}")
 
     f, Pxx = welch(rr_intervals, fs=4, nperseg=min(256, len(rr_intervals)))
-    plt.figure()
-    plt.plot(timestamps, rr_intervals, marker='o', color='b', label="RR Intervals (s)")
+
+
+
+    plt.figure(figsize=(10, 5))
+    plt.scatter(timestamps, rr_intervals, color='b', label="RR Intervals (s)")
     plt.xlabel("Time (s)")
     plt.ylabel("RR Interval (s)")
     plt.title("RR Intervals Over Time")
     plt.legend()
     plt.grid(True)
-    plt.savefig()
+    plt.savefig("rr_intervals_plot.png")
+
+    baevsky_values = [calc_Baevsky(rr_intervals[:i]) for i in range(1, len(rr_intervals) + 1)]
+    plt.figure(figsize=(10, 5))
+    plt.plot(timestamps, baevsky_values, color='r', linestyle='-', marker='o', label="Baevsky Index")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Baevsky Index")
+    plt.title("Baevsky Index Over Time")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("baevsky_index_plot.png")
 
     plt.figure()
     plt.semilogy(f, Pxx)
