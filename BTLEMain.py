@@ -10,7 +10,7 @@ import csv
 HRM_SERVICE_UUID = '0000180d-0000-1000-8000-00805f9b34fb'
 HRM_CHAR_UUID = '00002a37-0000-1000-8000-00805f9b34fb'
 
-csv_file = "hrv_data.csv"
+csv_file = "Test plots and data/hrv_data.csv"
 async def hr_data_handler(sender, data):
 # gets the hr from the hr sensro incoming data
 # checks the "flag" byte to see if the hr is stored in one or two

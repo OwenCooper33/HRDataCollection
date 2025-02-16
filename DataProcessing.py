@@ -7,7 +7,7 @@ from scipy import stats
 from scipy.signal import welch
 import csv
 
-csv_file = "hrv_data.csv"
+csv_file = "Test plots and data/hrv_data.csv"
 def read_csv():
     """Reads stored RR intervals and heart rate data from CSV."""
     timestamps, heart_rates, rr_intervals = [], [], []
