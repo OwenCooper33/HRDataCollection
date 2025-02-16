@@ -107,6 +107,24 @@ def process_data():
     total_time = timestamps[-1] - timestamps[0]
     fs_rr = len(rr_intervals) / total_time if total_time > 0 else 1
 
+    N = len(rr_intervals)
+    fft_vals = np.fft.fft(rr_intervals)
+    fft_freqs = np.fft.fftfreq(N, d=1/fs_rr)
+
+    # Keep only positive frequencies
+    positive_freqs = fft_freqs[:N // 2]
+    positive_fft_vals = np.abs(fft_vals[:N // 2])
+
+    # Plot Fourier Transform
+    plt.figure()
+    plt.plot(positive_freqs, positive_fft_vals)
+    plt.xlabel('Frequency [Hz]')
+    plt.ylabel('Magnitude')
+    plt.title('Fourier Transform of RR Intervals')
+    plt.grid()
+    plt.savefig("Fourier_Transform.png")
+    plt.show()
+
     f, Pxx = welch(rr_intervals, fs=fs_rr, nperseg=min(300, len(rr_intervals)))
 
     plt.figure()
