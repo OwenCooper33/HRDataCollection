@@ -42,6 +42,10 @@ def calc_Baevsky(rr_intervals):
     max_rr = np.max(rr_intervals)
     min_rr = np.min(rr_intervals)
     mxdmn = max_rr - min_rr
+    #to avoid dividing by 0
+    if mxdmn == 0:
+        return None
+
     return (mode_rr * 100) / (2 * median_rr * mxdmn)
 
 def process_data():
@@ -70,6 +74,15 @@ def process_data():
     plt.legend()
     plt.grid(True)
     plt.savefig("rr_intervals_plot.png")
+
+    plt.figure(figsize=(10, 5))
+    plt.scatter(timestamps, heart_rates, color='b', label="Heart Rate (bpm)")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Heart Rate (bpm)")
+    plt.title("HR Over Time")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("hr_plot.png")
 
     rmssd_values = [calc_RMSSD(rr_intervals[:i]) for i in range(2, len(rr_intervals) + 1)]
     rmssd_timestamps = timestamps[1:]
