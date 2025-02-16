@@ -44,7 +44,7 @@ def calc_Baevsky(rr_intervals):
     mxdmn = max_rr - min_rr
     #to avoid dividing by 0
     if mxdmn == 0:
-        return None
+        return np.nan
 
     return (mode_rr * 100) / (2 * median_rr * mxdmn)
 
@@ -62,10 +62,6 @@ def process_data():
     print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
     print(f"Baevsky Index: {Baevsky_HRV:.2f}")
 
-    f, Pxx = welch(rr_intervals, fs=4, nperseg=min(256, len(rr_intervals)))
-
-
-
     plt.figure(figsize=(10, 5))
     plt.scatter(timestamps, rr_intervals, color='b', label="RR Intervals (s)")
     plt.xlabel("Time (s)")
@@ -73,6 +69,7 @@ def process_data():
     plt.title("RR Intervals Over Time")
     plt.legend()
     plt.grid(True)
+    plt.yscale('log')
     plt.savefig("rr_intervals_plot.png")
 
     plt.figure(figsize=(10, 5))
@@ -105,6 +102,12 @@ def process_data():
     plt.legend()
     plt.grid(True)
     plt.savefig("baevsky_index_plot.png")
+
+    #to match the actual sampling frequency of the rr intervals
+    total_time = timestamps[-1] - timestamps[0]
+    fs_rr = len(rr_intervals) / total_time if total_time > 0 else 1
+
+    f, Pxx = welch(rr_intervals, fs=fs_rr, nperseg=min(300, len(rr_intervals)))
 
     plt.figure()
     plt.semilogy(f, Pxx)
