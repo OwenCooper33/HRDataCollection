@@ -7,7 +7,7 @@ from scipy import stats
 from scipy.signal import welch
 import csv
 
-csv_file = "Test plots and data/hrv_data.csv"
+csv_file = "hrv_data.csv"
 def read_csv():
     """Reads stored RR intervals and heart rate data from CSV."""
     timestamps, heart_rates, rr_intervals = [], [], []
@@ -104,16 +104,15 @@ def process_data():
     plt.savefig("baevsky_index_plot.png")
 
     #to match the actual sampling frequency of the rr intervals
-    total_time = timestamps[-1] - timestamps[0]
-    fs_rr = len(rr_intervals) / total_time if total_time > 0 else 1
+    num_intervals = len(rr_intervals)
+    fs_rr = 1 / np.mean(np.diff(timestamps))
 
-    N = len(rr_intervals)
     fft_vals = np.fft.fft(rr_intervals)
-    fft_freqs = np.fft.fftfreq(N, d=1/fs_rr)
+    fft_freqs = np.fft.fftfreq(num_intervals, d=1/fs_rr)
 
     # Keep only positive frequencies
-    positive_freqs = fft_freqs[:N // 2]
-    positive_fft_vals = np.abs(fft_vals[:N // 2])
+    positive_freqs = fft_freqs[:num_intervals // 2]
+    positive_fft_vals = np.abs(fft_vals[:num_intervals // 2])
 
     # Plot Fourier Transform
     plt.figure()
@@ -122,18 +121,20 @@ def process_data():
     plt.ylabel('Magnitude')
     plt.title('Fourier Transform of RR Intervals')
     plt.grid()
+    plt.semilogy(positive_freqs, positive_fft_vals)
     plt.savefig("Fourier_Transform.png")
     plt.show()
 
-    f, Pxx = welch(rr_intervals, fs=fs_rr, nperseg=min(300, len(rr_intervals)))
+    f, Pxx = welch(rr_intervals, fs=fs_rr, nperseg=min(256, len(rr_intervals)))
 
-    plt.figure()
-    plt.semilogy(f, Pxx)
+    plt.figure(figsize=(10, 5))
+    plt.semilogy(f, Pxx, color='b')
     plt.xlabel('Frequency [Hz]')
     plt.ylabel('Power Spectral Density')
     plt.title('Power Spectral Density of HRV')
     plt.grid()
     plt.savefig("PSD.png")
+    plt.show()
 
 if __name__ == "__main__":
     process_data()

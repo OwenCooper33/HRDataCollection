@@ -10,13 +10,13 @@ import csv
 HRM_SERVICE_UUID = '0000180d-0000-1000-8000-00805f9b34fb'
 HRM_CHAR_UUID = '00002a37-0000-1000-8000-00805f9b34fb'
 
-csv_file = "Test plots and data/hrv_data.csv"
+csv_file = "hrv_data.csv"
 async def hr_data_handler(sender, data):
 # gets the hr from the hr sensro incoming data
 # checks the "flag" byte to see if the hr is stored in one or two
 # bytes and reads in the appropriate byte
     flag = data[0]
-    hr_value = data[1]  # Heart rate value seems to be the second byte
+    hr_value = data[1]  # Heart rate value is the second byte
 
     print(f"Heart Rate: {hr_value} bpm")  # Print the HR value each time it's read
 # gets the rr from the 2nd byte
@@ -41,13 +41,6 @@ async def run_client(device_address):
         await client.start_notify(HRM_CHAR_UUID, hr_data_handler)
         print("Collecting data, press Ctrl+C to stop...")
 
-        # Signal handling for Windows
-        def signal_handler(sig, frame):
-            print("\nStopping data collection...")
-            asyncio.create_task(stop_and_exit(client))
-#need to fix the quit on cntrl c but it works without
-        signal.signal(signal.SIGINT, signal_handler)
-
         try:
             while True:
                 await asyncio.sleep(1)
@@ -65,7 +58,7 @@ async def main():
     device_address = input("Enter HR address: ")
     with open(csv_file, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Timestamp", "Heart Rate", "RR Interval"])  # CSV Header
+        writer.writerow(["Timestamp", "Heart Rate", "RR Interval"])
     await run_client(device_address)
 
 

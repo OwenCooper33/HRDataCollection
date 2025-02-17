@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="updated a couple files">
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="add fornier transformation plot">
+      <change afterPath="$PROJECT_DIR$/Notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTLEMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/BTLEMain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataProcessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +65,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Archive" />
       <recent name="$PROJECT_DIR$/Test plots and data" />
     </key>
@@ -170,7 +173,10 @@
       <workItem from="1739559328159" duration="2089000" />
       <workItem from="1739569256609" duration="10449000" />
       <workItem from="1739709373670" duration="7314000" />
-      <workItem from="1739729157453" duration="483000" />
+      <workItem from="1739729157453" duration="500000" />
+      <workItem from="1739736895832" duration="3379000" />
+      <workItem from="1739748556187" duration="517000" />
+      <workItem from="1739753235312" duration="9935000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -436,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739726848305</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="add fornier transformation plot">
+      <option name="closed" value="true" />
+      <created>1739729656599</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1739729656599</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +492,8 @@
     <MESSAGE value="added hr over time plot" />
     <MESSAGE value="fixed an issue computing the baevsky index where it could divide by none, chagned the frequency for the psd plot to the sampling frequency by finding an average sampling frequency for the rr data" />
     <MESSAGE value="updated a couple files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated a couple files" />
+    <MESSAGE value="add fornier transformation plot" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fornier transformation plot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -490,7 +505,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BTLEMain.py</url>
-          <line>71</line>
+          <line>64</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -498,18 +513,13 @@
           <line>4</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataProcessing.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1739713111646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1739791309426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$tests.coverage" NAME="tests Coverage Results" MODIFIED="1739571529768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HRDataCollection$DataProcessing.coverage" NAME="DataProcessing Coverage Results" MODIFIED="1739729280829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$DataProcessing.coverage" NAME="DataProcessing Coverage Results" MODIFIED="1739819120844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$Main.coverage" NAME="Main Coverage Results" MODIFIED="1739289427520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$Scanner.coverage" NAME="Scanner Coverage Results" MODIFIED="1739572318269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
