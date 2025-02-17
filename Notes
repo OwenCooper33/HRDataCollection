@@ -7,10 +7,13 @@ HR Plot
 the threshold intervals, and the efforts at the end
 
 RR Intervals
-- the plot of the RR intervals also interversely mirrors
-the trends of
+- the plot of the RR intervals also inversely mirrors
+the trends of the hr plot. The intervals generally decrease
+in length as the bpm increases. This clearly shows the
+intervals.
 
 RMSSD HRV Plot
+
 
 Baevsky Index Plot
 

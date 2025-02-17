@@ -9,7 +9,7 @@ import csv
 
 csv_file = "hrv_data.csv"
 def read_csv():
-    """Reads stored RR intervals and heart rate data from CSV."""
+    #Reads stored RR intervals and heart rate data from CSV
     timestamps, heart_rates, rr_intervals = [], [], []
     try:
         with open(csv_file, "r") as f:
