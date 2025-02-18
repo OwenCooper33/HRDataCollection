@@ -12,11 +12,29 @@ the trends of the hr plot. The intervals generally decrease
 in length as the bpm increases. This clearly shows the
 intervals.
 
-RMSSD HRV Plot
+RMSSD HRV Plot (typical range 55 to 105 rest)
+- The RMSSD HRV plot shows an exponential decay over time
+that dips below 0.04s then goes back but and stays at 0.04 s
+- the dip in hrv is consistent with an elevated level of
+stress, in this case the stress is the physical exercise
 
 
 Baevsky Index Plot
-
-Fourier Transform Plot
+- this plot shows the Baevsky Stress Index over time
+- the initial fluctuations in the beginning might be
+because of the initial response to stress
+- it plateaus around 5 with a slight increase which is
+indicative of accumulating stress over the workout
 
 Power Spectral Density Plot
+- In your plot, this is visible as the highest peak at the very left
+ Often associated with long-term regulatory mechanisms like temperature regulation and hormonal systems
+
+ - Strong VLF component (0-0.04 Hz, the large peak near 0 Hz)
+ - Moderate LF activity (0.04-0.15 Hz)
+    - Reflects both sympathetic and parasympathetic nervous
+    system activity, often associated with blood pressure regulation
+ - Relatively lower HF activity (0.15-0.4 Hz)
+    - Primarily reflects parasympathetic (vagal) activity
+ - Some higher frequency components beyond 0.4 Hz which are
+ usually considered noise

@@ -56,10 +56,10 @@ def process_data():
         print("No data collected.")
         return
 
-    rmssd_HRV = calc_RMSSD(rr_intervals)
+    rmssd_HRV = calc_RMSSD(rr_intervals) * 1000
     Baevsky_HRV = calc_Baevsky(rr_intervals)
 
-    print(f"HRV(RMSSD): {rmssd_HRV:.2f} seconds")
+    print(f"HRV(RMSSD): {rmssd_HRV:.2f} ms")
     print(f"Baevsky Index: {Baevsky_HRV:.2f}")
 
     plt.figure(figsize=(10, 5))
@@ -69,7 +69,6 @@ def process_data():
     plt.title("RR Intervals Over Time")
     plt.legend()
     plt.grid(True)
-    plt.yscale('log')
     plt.savefig("rr_intervals_plot.png")
 
     plt.figure(figsize=(10, 5))
@@ -81,13 +80,13 @@ def process_data():
     plt.grid(True)
     plt.savefig("hr_plot.png")
 
-    rmssd_values = [calc_RMSSD(rr_intervals[:i]) for i in range(2, len(rr_intervals) + 1)]
+    rmssd_values = [calc_RMSSD(rr_intervals[:i]) * 1000 for i in range(2, len(rr_intervals) + 1)]
     rmssd_timestamps = timestamps[1:]
 
     plt.figure(figsize=(10, 5))
     plt.plot(rmssd_timestamps, rmssd_values, color='g', linestyle='-', marker='o', label="RMSSD HRV")
     plt.xlabel("Time (s)")
-    plt.ylabel("RMSSD HRV (s)")
+    plt.ylabel("RMSSD HRV (ms)")
     plt.title("RMSSD HRV Over Time")
     plt.legend()
     plt.grid(True)
