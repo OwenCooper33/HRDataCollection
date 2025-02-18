@@ -27,14 +27,9 @@ because of the initial response to stress
 indicative of accumulating stress over the workout
 
 Power Spectral Density Plot
-- In your plot, this is visible as the highest peak at the very left
- Often associated with long-term regulatory mechanisms like temperature regulation and hormonal systems
-
- - Strong VLF component (0-0.04 Hz, the large peak near 0 Hz)
- - Moderate LF activity (0.04-0.15 Hz)
-    - Reflects both sympathetic and parasympathetic nervous
-    system activity, often associated with blood pressure regulation
- - Relatively lower HF activity (0.15-0.4 Hz)
-    - Primarily reflects parasympathetic (vagal) activity
- - Some higher frequency components beyond 0.4 Hz which are
- usually considered noise
+- this plot shows how much the heart rate varies
+at each frequency
+- the highest power is at lower frequencies meaning
+that the most variations occur over longer periods of
+time
+- less variation at higher frequencies

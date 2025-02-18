@@ -103,34 +103,34 @@ def process_data():
     plt.savefig("baevsky_index_plot.png")
 
     #to match the actual sampling frequency of the rr intervals
-    num_intervals = len(rr_intervals)
+    num_valus = len(heart_rates)
     fs_rr = 1 / np.mean(np.diff(timestamps))
 
-    fft_vals = np.fft.fft(rr_intervals)
-    fft_freqs = np.fft.fftfreq(num_intervals, d=1/fs_rr)
+    fft_vals = np.fft.fft(heart_rates)
+    fft_freqs = np.fft.fftfreq(num_valus, d=1/fs_rr)
 
     # Keep only positive frequencies
-    positive_freqs = fft_freqs[:num_intervals // 2]
-    positive_fft_vals = np.abs(fft_vals[:num_intervals // 2])
+    positive_freqs = fft_freqs[:num_valus // 2]
+    positive_fft_vals = np.abs(fft_vals[:num_valus // 2])
 
     # Plot Fourier Transform
     plt.figure()
     plt.plot(positive_freqs, positive_fft_vals)
     plt.xlabel('Frequency [Hz]')
     plt.ylabel('Magnitude')
-    plt.title('Fourier Transform of RR Intervals')
+    plt.title('Fourier Transform of Heart Rate')
     plt.grid()
     plt.semilogy(positive_freqs, positive_fft_vals)
     plt.savefig("Fourier_Transform.png")
     plt.show()
 
-    f, Pxx = welch(rr_intervals, fs=fs_rr, nperseg=min(256, len(rr_intervals)))
+    f, Pxx = welch(heart_rates, fs=fs_rr, nperseg=min(256, len(heart_rates)))
 
     plt.figure(figsize=(10, 5))
     plt.semilogy(f, Pxx, color='b')
     plt.xlabel('Frequency [Hz]')
     plt.ylabel('Power Spectral Density')
-    plt.title('Power Spectral Density of HRV')
+    plt.title('Power Spectral Density of Heart Rate')
     plt.grid()
     plt.savefig("PSD.png")
     plt.show()
