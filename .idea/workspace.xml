@@ -176,7 +176,7 @@
       <workItem from="1739729157453" duration="500000" />
       <workItem from="1739736895832" duration="3379000" />
       <workItem from="1739748556187" duration="517000" />
-      <workItem from="1739753235312" duration="26890000" />
+      <workItem from="1739753235312" duration="28390000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -498,7 +498,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739897109591</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="organized plots">
+      <option name="closed" value="true" />
+      <created>1739898555403</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1739898555403</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

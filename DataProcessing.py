@@ -109,11 +109,11 @@ def process_data():
     fft_vals = np.fft.fft(heart_rates)
     fft_freqs = np.fft.fftfreq(num_valus, d=1/fs_rr)
 
-    # Keep only positive frequencies
+    # keep positive frequencies
     positive_freqs = fft_freqs[:num_valus // 2]
     positive_fft_vals = np.abs(fft_vals[:num_valus // 2])
 
-    # Plot Fourier Transform
+    # plot Fourier Transform
     plt.figure()
     plt.plot(positive_freqs, positive_fft_vals)
     plt.xlabel('Frequency [Hz]')
