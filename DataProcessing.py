@@ -102,7 +102,7 @@ def process_data():
     plt.grid(True)
     plt.savefig("baevsky_index_plot.png")
 
-    #to match the actual sampling frequency of the rr intervals
+    #to match the actual sampling frequency of the hr values
     num_valus = len(heart_rates)
     fs_rr = 1 / np.mean(np.diff(timestamps))
 

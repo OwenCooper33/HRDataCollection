@@ -27,9 +27,9 @@ because of the initial response to stress
 indicative of accumulating stress over the workout
 
 Power Spectral Density Plot
-- this plot shows how much the heart rate varies
-at each frequency
+- this plot shows the power of heart rate frequencies
 - the highest power is at lower frequencies meaning
-that the most variations occur over longer periods of
-time
-- less variation at higher frequencies
+that most of the heart rate frequencies are lower and
+changes over minutes
+- the lower power at higher frequencies means there are
+ smaller, faster fluctuations happening too
