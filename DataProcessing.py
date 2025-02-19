@@ -63,7 +63,7 @@ def process_data():
     print(f"Baevsky Index: {Baevsky_HRV:.2f}")
 
     plt.figure(figsize=(10, 5))
-    plt.scatter(timestamps, rr_intervals, color='b', label="RR Intervals (s)")
+    plt.plot(timestamps, rr_intervals, color='b', linestyle='-', label="RR Intervals (s)")
     plt.xlabel("Time (s)")
     plt.ylabel("RR Interval (s)")
     plt.title("RR Intervals Over Time")
@@ -72,7 +72,7 @@ def process_data():
     plt.savefig("rr_intervals_plot.png")
 
     plt.figure(figsize=(10, 5))
-    plt.scatter(timestamps, heart_rates, color='b', label="Heart Rate (bpm)")
+    plt.plot(timestamps, heart_rates, color='b', linestyle='-', label="Heart Rate (bpm)")
     plt.xlabel("Time (s)")
     plt.ylabel("Heart Rate (bpm)")
     plt.title("HR Over Time")
@@ -84,7 +84,7 @@ def process_data():
     rmssd_timestamps = timestamps[1:]
 
     plt.figure(figsize=(10, 5))
-    plt.plot(rmssd_timestamps, rmssd_values, color='g', linestyle='-', marker='o', label="RMSSD HRV")
+    plt.plot(rmssd_timestamps, rmssd_values, color='g', linestyle='-', label="RMSSD HRV")
     plt.xlabel("Time (s)")
     plt.ylabel("RMSSD HRV (ms)")
     plt.title("RMSSD HRV Over Time")
@@ -94,13 +94,14 @@ def process_data():
 
     baevsky_values = [calc_Baevsky(rr_intervals[:i]) for i in range(1, len(rr_intervals) + 1)]
     plt.figure(figsize=(10, 5))
-    plt.plot(timestamps, baevsky_values, color='r', linestyle='-', marker='o', label="Baevsky Index")
+    plt.plot(timestamps, baevsky_values, color='r', linestyle='-', label="Baevsky Index")
     plt.xlabel("Time (s)")
     plt.ylabel("Baevsky Index")
     plt.title("Baevsky Index Over Time")
     plt.legend()
     plt.grid(True)
     plt.savefig("baevsky_index_plot.png")
+
 
     #to match the actual sampling frequency of the hr values
     num_valus = len(heart_rates)
