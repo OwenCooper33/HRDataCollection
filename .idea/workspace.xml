@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="organized plots">
-      <change afterPath="$PROJECT_DIR$/RawDataListener.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RawEKGScan.py" afterDir="false" />
+    <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="added a scanner to find services on the hr sensor">
+      <change afterPath="$PROJECT_DIR$/hrv_data2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTLEMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/BTLEMain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataProcessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrv_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hrv_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RawDataListener.py" beforeDir="false" afterPath="$PROJECT_DIR$/RawDataListener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RawEKGScan.py" beforeDir="false" afterPath="$PROJECT_DIR$/RawEKGScan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hrv_data.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +49,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.BTLEMain.executor": "Run",
-    "Python.DataProcessing.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.RawDataListener.executor": "Run",
-    "Python.RawEKGScan.executor": "Run",
-    "Python.Scanner.executor": "Run",
-    "Python.tests.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.BTLEMain.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DataProcessing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RawDataListener.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RawEKGScan.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Scanner.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/plots 2" />
+      <recent name="$PROJECT_DIR$/plots 3" />
       <recent name="$PROJECT_DIR$/Plots" />
       <recent name="$PROJECT_DIR$/Experiment Plots" />
-      <recent name="$PROJECT_DIR$/Archive" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RawDataListener">
+  <component name="RunManager" selected="Python.DataProcessing">
     <configuration name="BTLEMain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HRDataCollection" />
       <option name="ENV_FILES" value="" />
@@ -193,10 +195,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.RawDataListener" />
-        <item itemvalue="Python.RawEKGScan" />
         <item itemvalue="Python.DataProcessing" />
         <item itemvalue="Python.BTLEMain" />
+        <item itemvalue="Python.RawDataListener" />
+        <item itemvalue="Python.RawEKGScan" />
         <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
@@ -230,7 +232,9 @@
       <workItem from="1739736895832" duration="3379000" />
       <workItem from="1739748556187" duration="517000" />
       <workItem from="1739753235312" duration="30508000" />
-      <workItem from="1739977368283" duration="6023000" />
+      <workItem from="1739977368283" duration="7412000" />
+      <workItem from="1740139949730" duration="4357000" />
+      <workItem from="1740209603241" duration="1195000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -576,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739902207873</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="added a scanner to find services on the hr sensor">
+      <option name="closed" value="true" />
+      <created>1739998147438</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998147438</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Setting up the connection for ant+  connection using mostly standard numbers" />
     <MESSAGE value="Created the store data function to receive and store the hr data" />
     <MESSAGE value="Wrote code to open the connection, run until canceled, then stop the connection" />
     <MESSAGE value="added the calulation for rmssd based on a formula I found online" />
@@ -619,7 +630,8 @@
     <MESSAGE value="add fornier transformation plot" />
     <MESSAGE value="fixed the scale of the PSD plot" />
     <MESSAGE value="organized plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="organized plots" />
+    <MESSAGE value="added a scanner to find services on the hr sensor" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a scanner to find services on the hr sensor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -628,11 +640,6 @@
           <url>file://$PROJECT_DIR$/Test plots and data/Main.py</url>
           <line>8</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/BTLEMain.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataProcessing.py</url>
@@ -646,19 +653,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RawDataListener.py</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1739979115036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$BTLEMain.coverage" NAME="BTLEMain Coverage Results" MODIFIED="1740225453360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$RawEKGScan.coverage" NAME="RawEKGScan Coverage Results" MODIFIED="1739997674934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$tests.coverage" NAME="tests Coverage Results" MODIFIED="1739571529768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HRDataCollection$DataProcessing.coverage" NAME="DataProcessing Coverage Results" MODIFIED="1739979128361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$DataProcessing.coverage" NAME="DataProcessing Coverage Results" MODIFIED="1740225912398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$Main.coverage" NAME="Main Coverage Results" MODIFIED="1739289427520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HRDataCollection$Scanner.coverage" NAME="Scanner Coverage Results" MODIFIED="1739572318269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HRDataCollection$Scanner.coverage" NAME="Scanner Coverage Results" MODIFIED="1740140204760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HRDataCollection$RawDataListener.coverage" NAME="RawDataListener Coverage Results" MODIFIED="1739998082556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

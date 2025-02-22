@@ -1,3 +1,4 @@
+'''scans for heart strap signals'''
 import asyncio
 from bleak import BleakClient
 

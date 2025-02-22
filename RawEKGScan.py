@@ -1,3 +1,5 @@
+'''For testing hr strap signals'''
+
 import asyncio
 from bleak import BleakClient
 
