@@ -3,7 +3,6 @@ import time
 import matplotlib
 matplotlib.use('TkAgg')  # Force TkAgg backend
 from bleak import BleakClient
-import signal
 import csv
 
 # Wahoo TICKR btle and  UUID
