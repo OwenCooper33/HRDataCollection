@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f381af57-d3ae-46a7-b3cc-8a0e9dc77129" name="Changes" comment="added a scanner to find services on the hr sensor">
-      <change afterPath="$PROJECT_DIR$/Preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +65,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Plots" />
+      <recent name="$PROJECT_DIR$/Plots/Intervals" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/plots 2" />
       <recent name="$PROJECT_DIR$/plots 3" />
-      <recent name="$PROJECT_DIR$/Plots" />
-      <recent name="$PROJECT_DIR$/Experiment Plots" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Preprocessing">
@@ -230,6 +230,7 @@
       <workItem from="1739977368283" duration="7412000" />
       <workItem from="1740139949730" duration="4357000" />
       <workItem from="1740209603241" duration="4385000" />
+      <workItem from="1740699004771" duration="2464000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up the environment with openant for ant+  connection, serial for usb stick, and matplot for plotting the data">
       <option name="closed" value="true" />
@@ -591,7 +592,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740226554654</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="added a scanner to find services on the hr sensor">
+      <option name="closed" value="true" />
+      <created>1740699305851</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1740699305851</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

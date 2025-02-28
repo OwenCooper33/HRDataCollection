@@ -46,10 +46,6 @@ async def run_client(device_address):
         except asyncio.CancelledError:
             await client.stop_notify(HRM_CHAR_UUID)
 
-#stop the connection and process the data
-async def stop_and_exit(client):
-    await client.stop_notify(HRM_CHAR_UUID)
-
 #get the adress from the Scanner file
 # my wahoo tickr is 40ED4EEF-107E-2438-6DC1-8C57CCE2563A
 async def main():
